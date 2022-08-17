@@ -46,8 +46,9 @@ def home():
     suggestions = get_suggestions()
     return render_template('home.html', suggestions = suggestions)
 
-@app.route("/recommend", methods = ["POST"])
+@app.route("/recommend",methods=["POST"])
 def recommend():
+    # getting data from AJAX request
     title = request.form['title']
     cast_ids = request.form['cast_ids']
     cast_names = request.form['cast_names']
@@ -60,24 +61,25 @@ def recommend():
     poster = request.form['poster']
     genres = request.form['genres']
     overview = request.form['overview']
-    rating = request.form['rating']
-    vote_average = request.form['vote_average']
-    cast_ids = request.form['cast_ids']
+    vote_average = request.form['rating']
     vote_count = request.form['vote_count']
     rel_date = request.form['rel_date']
     release_date = request.form['release_date']
     runtime = request.form['runtime']
     status = request.form['status']
     rec_movies = request.form['rec_movies']
-    rec_poster = request.form['rec_poster']
+    rec_posters = request.form['rec_posters']
     rec_movies_org = request.form['rec_movies_org']
     rec_year = request.form['rec_year']
-    rec_vote= request.form['rec_vote']
-    
-    suggestion = get_suggestions()
+    rec_vote = request.form['rec_vote']
+
+    # get movie suggestions for auto complete
+    suggestions = get_suggestions()
+
+    # call the convert_to_list function for every string that needs to be converted to list
     rec_movies_org = convert_to_list(rec_movies_org)
     rec_movies = convert_to_list(rec_movies)
-    rec_posters = convert_to_list(rec_poster)
+    rec_posters = convert_to_list(rec_posters)
     cast_names = convert_to_list(cast_names)
     cast_chars = convert_to_list(cast_chars)
     cast_profiles = convert_to_list(cast_profiles)
