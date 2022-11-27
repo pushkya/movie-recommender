@@ -33,7 +33,7 @@ Create an account in https://www.themoviedb.org/. Once you successfully created 
   
 More about Cosine Similarity : [Understanding the Math behind Cosine Similarity](https://www.machinelearningplus.com/nlp/cosine-similarity/)
 
-##Demo
+## Demo
 
 
 https://user-images.githubusercontent.com/47081733/204115013-fba9412e-3f48-437a-83f1-03ad4c584980.mp4
